@@ -1,0 +1,22 @@
+
+<form formGroup="ng"  >
+    <br/>
+    <label for="title">Nombre del producto:</label><br/>
+    <input type="text" name="title" id="title" (ngModel)="product.title"/><br/>
+    <label for="price">Precio:</label><br/>
+    <input type="text" name="title" id="price"(ngModel)="product.price"/><br/>
+
+    <label for="description">descripción:</label><br/>
+    <input type="text" name="title" id="description" (ngModel)="product.description"/> <br/>
+
+    <label for="category">Categoria:</label><br/>
+    <input type="text" name="title" id="category" (ngModel)="product.category" /><br/>
+
+    <label for="images">Imagen:</label><br/>    
+    <input type="text" name="title" id="images" (ngModel)="product.image"/><br/>
+
+    <input type="submit" value="Agregar"/>
+    <input type="button" value="Cancelar" routerLink="/products"/>
+
+
+</form>

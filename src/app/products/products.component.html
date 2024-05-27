@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="Container2" *ngFor="let product of products">
+    <img [src]="product.image" class="image" alt="{{product.title}}">
+    <div class="information">
+      <a [routerLink]="['/products', product.id]" >
+      
+        <p >{{ product.title }}</p>
+        <!-- <p >{{ product.description }}</p> -->
+        <p >${{ product.price }}</p>
+      </a>
+    </div>
+    <a [routerLink]="['/edit-product', product.id]" class="btn-edit">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#000000" d="M10 15q-.425 0-.712-.288T9 14v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4t-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162zm9.6-9.2l1.425-1.4l-1.4-1.4L18.2 4.4zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h6.5q.35 0 .575.175t.35.45t.087.55t-.287.525l-4.65 4.65q-.275.275-.425.638T7 10.75V15q0 .825.588 1.412T9 17h4.225q.4 0 .763-.15t.637-.425L19.3 11.75q.25-.25.525-.288t.55.088t.45.35t.175.575V19q0 .825-.587 1.413T19 21z"/></svg>
+    </a>
+    <a (click)="deleteProduct(product.id)" class="btn-edit">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#000000" d="m9.4 16.5l2.6-2.6l2.6 2.6l1.4-1.4l-2.6-2.6L16 9.9l-1.4-1.4l-2.6 2.6l-2.6-2.6L8 9.9l2.6 2.6L8 15.1zM7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21z"/></svg>
+    </a>
+  </div>
+  <div class="container-add">
+    <h1 class="title-product">Productos</h1>
+    <a routerLink="/create-product" class="add-product">agregar</a>
+  </div>
+</div>
+  

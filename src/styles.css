@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    background-color: beige;
+    position: fixed;
+    font-size: 3rem;
+    width: -webkit-fill-available;
+}
