@@ -1,22 +1,25 @@
-<!-- 
-<form   >
-    <br/>
-    <label for="title">Nombre del producto:</label><br/>
-    <input type="text" placeholder="{{product.title}}" name="title" id="title" (ngModel)="product.title"/><br/>
-    <label for="price">Precio:</label><br/>
-    <input type="text" name="title" placeholder="{{product.price}}" id="price"(ngModel)="product.price"/><br/>
-
-    <label for="description">descripción:</label><br/>
-    <input type="text" name="title" id="description" placeholder="{{product.description}}" (ngModel)="product.description"/> <br/>
-
-    <label for="category">Categoria:</label><br/>
-    <input type="text" name="title" id="category" (ngModel)="product.category" /><br/>
-
-    <label for="images">Imagen:</label><br/>    
-    <input type="text" name="title" id="images" placeholder="{{product.image}}" (ngModel)="product.image"/><br/>
-
-    <input type="submit" value="Agregar"/>
-    <input type="button" value="Cancelar" routerLink="/products"/>
-
-
-</form> -->
+<form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+    <div>
+        <label for="title">Nombre del producto:</label><br/>
+        <input type="text" name="title" id="title" formControlName="title"/><br/>
+        <label for="price">Precio:</label><br/>
+        <input type="text" name="price" id="price" formControlName="price"/><br/>
+    
+        <label for="description">Descripción:</label><br/>
+        <input type="text" name="description" id="description" formControlName="description"/><br/>
+    
+        <label for="category">Categoría:</label><br/>
+        <select formControlName="categoryId">
+            <option *ngFor="let c of categorias" [value]="c.id">{{c.name}}</option>
+        </select><br/>
+    
+        <label for="image">Imagen:</label><br/>    
+        <input type="text" name="image" id="image" formControlName="image"/><br/>
+    
+        <div class="botones">
+            <input type="submit" value="Enviar"/>
+            <input type="button" value="Cancelar" routerLink="/products"/>
+        </div>
+    
+    </div>
+    </form>
