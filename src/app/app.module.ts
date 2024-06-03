@@ -10,6 +10,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path:'',redirectTo:'/products',pathMatch:'full'},
@@ -33,6 +34,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

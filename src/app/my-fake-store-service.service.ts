@@ -24,7 +24,7 @@ export class MyFakeStoreServiceService {
   createProducto(producto:any):Observable<any>{
     
     try {
-      return this.http.post<any>(this.apiUrl, producto);
+      return this.http.post<any>("https://api.escuelajs.co/api/v1/products", producto);
   } catch (error) {
       console.error("An error occurred:", error);
       // You can also send error reports to a logging service or server for analysis and monitoring.
